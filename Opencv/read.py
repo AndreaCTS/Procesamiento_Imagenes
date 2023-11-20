@@ -6,10 +6,13 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from sklearn.decomposition import PCA
 from scipy.stats import stats
+from skimage import restoration
 
 imagenes = []
+
 for i in range(2,7):
     enlace = "Photos/mdb001 ("+str(i)+").png"
+    
     imagenes.append(cv.imread(enlace))
     imagenes[(i-2)] = cv.cvtColor(imagenes[(i-2)],cv.COLOR_RGB2GRAY)
 
